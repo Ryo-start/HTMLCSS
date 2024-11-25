@@ -1,0 +1,361 @@
+.page-all {
+    color: #333;
+    font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+    font-size: 14px;
+    font-weight: 500; 
+    margin:0;
+}
+
+/*ヘッダー*/
+.Header {
+    width: 100%;
+    display: grid;
+    height: 70px;
+    background-color: #fff;
+    box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.05);
+}
+
+.headercontainer {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 36px 0 36px;
+    max-width: 100%;
+    position: relative;
+}
+
+.headerNavHamburger {
+    display:none;
+}
+
+.headernavlist {
+    align-items: center;
+    display: flex;
+    justify-content: space-between 
+}
+
+.header-logo {
+    align-self: center;
+}
+
+.header-logo-pc {
+    display: block;
+    height: 20px;
+    width: auto;
+}
+
+.headerLogo-image-sp {
+    display: none;
+    height: 16px;
+    width: auto;
+}
+
+.headernav-item {
+    margin-right: 45px;
+    list-style: none;
+}
+
+.headernav-item__link {
+    display: block;
+    color: #333;
+    text-decoration: none;
+}
+
+.headernav-item__link >span {
+    display: block;
+    font-weight: 700; 
+    text-align: center;
+}
+
+.headernav-item__link >span:first-child {
+    font-family: "Lato", sans-serif;
+    font-size: 12px;    
+    line-height: 14.4px;    
+}
+
+.headernav-item__link >span:last-child {
+    font-size: 10px;  
+}
+
+.headernav-item__button {
+    font-size: 12px;
+    color: #fff;
+    background-color: #F79214;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 38px;
+    height: 40px;
+    padding: 0 20px;
+}
+/* メイン */
+.main-visual {
+    position: relative;
+    height: 739px;
+}
+
+.main-visual-image {
+    position: absolute;
+    z-index: -1;
+}
+
+.left-top {
+    top: -70px;
+    left: 0;
+}    
+
+.right-bottom {
+    right: 0;
+    bottom: 70px;
+}
+
+.line {
+    top: 84px;
+    left: -70px;
+}    
+
+.main-photo {
+    top: -70px;
+    right: 0;
+    width: 775px;
+}
+
+.main-block {
+    max-width: 1040px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    padding-top: 219px;
+}
+
+.main-block2 {
+    position: relative;
+    width: fit-content;
+}
+
+.text{
+    color: #333;
+    font-family: "Lato", sans-serif;
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 63px;
+    margin-bottom: 16px;
+}
+
+.No1-photo {
+    position: absolute;
+    top: -105px;
+    right: -150px;
+}
+
+.contact-transition{
+    align-items: center;
+    background-color: #F79214;
+    border: none;
+    border-radius: 38px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 700;
+    height: 64px;
+    justify-content: center;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.caption {
+    font-size: 12px;
+    line-height: 16px;
+}
+
+
+/*メディアクエリ*/
+@media screen and (max-width: 767px) {
+   
+    .Header {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .header-logo-pc {
+        display: none !important;
+    }
+
+    .headerLogo-image-sp {
+        display: block !important;
+        height: 16px;
+        width: auto;
+    }
+
+    .header-nav {
+       display:inline-flex; 
+    }
+
+    .headerNavHamburger {
+        cursor: pointer;
+        display: block;
+        position: relative;
+        width: 24px;
+        height: 17px;
+        margin: auto;
+        z-index: 100;
+    }
+
+    /* 三本線 */
+    .headerNavHamburger__line {
+        position: absolute;
+        top: 0%;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #A2A2A4;
+        border-radius: 10px;
+        transition: top 0.2s, transform 0.2s, opacity 0.3s;
+    }
+
+    .headerNavHamburger__line:nth-child(2) {
+        top: 50%;
+    }
+
+    .headerNavHamburger__line:nth-child(3) {
+        top: 100%;
+    }
+
+    /* トグル */
+    .is-active .headerNavHamburger__line:nth-child(1) {
+        top: 50%;
+        transform: translate(0, -50%) rotate(45deg);
+        opacity: 1;
+    }
+
+    .is-active .headerNavHamburger__line:nth-child(2) {
+        transform: translate(20px, -50%);
+        opacity: 0;
+    }
+
+    .is-active .headerNavHamburger__line:nth-child(3) {
+        top: 50%;
+        transform: translate(0, -50%) rotate(-45deg);
+        opacity: 1;
+    }
+
+    .headernavlist {
+        position: fixed;
+        top: 85px;
+        left: 100%;
+        width: 100%;
+        display: block;
+        padding-top: 20px;
+        padding-bottom: 75px;
+        transition: transform 0.5s;
+        z-index: 5;
+        background-color: rgba(0, 0, 0, 0.8);
+        height: 100%;
+    }
+
+    /* トグル */
+    .headernavlist.is-active {
+        transform: translate3d(-100%, 0, 0);
+    }
+
+    .headernav-item {
+        margin-right: 0px;
+    }
+
+    .headernav-item__link {
+        padding: 20px 0;
+    }
+
+    .headernav-item__link>span:first-child {
+        font-size: 16px;
+        letter-spacing: 5px;
+        color: #fff;
+    }
+
+    .headernav-item__link>span:last-child {
+        font-size: 12px;
+        margin-top: 5px;
+        color: #F79214;
+        letter-spacing: 2px;
+    }
+
+    .headernav-item__button{
+        font-size: 16px;
+        margin:  auto;
+        height: 60px;
+        width: 250px;
+    }
+
+    .headernav-item:last-of-type {
+        margin-top: 20px;
+    }
+    
+    .main-photo-sp {
+        margin-bottom: 7px;
+        width: 100%;
+    }
+
+    .main-visual {
+        height: fit-content;
+    }
+    
+    .left-top {
+        display: none;
+    }
+
+    .right-bottom {
+        display: none;
+    }
+
+    .line {
+        display: none;
+    }
+
+    .main-photo {
+        display: none;
+    }
+
+    .main-block{
+        padding-top: 0;
+    }
+
+    .text{
+        font-size: 22px;
+        line-height: 36px;
+        position: relative;
+        width: fit-content;
+    }
+
+    .No1-photo {
+        width: 100px;
+        top: -20px;
+        right: -85px;
+    }
+
+}
+
+@media screen and (min-width: 767px) {
+    .main-photo-sp {
+        display: none;
+    }
+
+/* ホバー */
+    .contact-transition:hover {
+        opacity: 0.8;
+        transition: opacity 0.2s;
+}
+
+    .header-logo-pc:hover {
+        opacity: 0.8;
+        transition: opacity 0.2s; 
+    }
+
+    .headernav-item:hover {
+        opacity: 0.8;
+        transition: opacity 0.2s;
+    }
+}
